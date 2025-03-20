@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de Mots de Passe Sécurisé</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">PassSafe</div>
+        <a href="about.html" class="about-btn">À propos</a>
+    </header>
+
+    <div class="container">
+        <h1>Générateur de Mots de Passe</h1>
+
+        <div id="password-container">
+            <input type="text" id="password" readonly>
+            <button onclick="copyPassword()">Copier</button>
+        </div>
+
+        <div class="options">
+            <label><input type="checkbox" id="includeUppercase" checked onchange="generatePassword()"> Majuscules</label>
+            <label><input type="checkbox" id="includeLowercase" checked onchange="generatePassword()"> Minuscules</label>
+            <label><input type="checkbox" id="includeNumbers" checked onchange="generatePassword()"> Chiffres</label>
+            <label><input type="checkbox" id="includeSymbols" onchange="generatePassword()"> Symboles</label>
+        </div>
+
+        <div class="slider-container">
+            <input type="range" min="8" max="2000" value="12" id="lengthSlider" oninput="updateLength(); generatePassword();">
+            <span id="lengthValue">12</span> caractères
+        </div>
+
+        <div id="strengthIndicator"></div>
+
+        
+    </div>
+
+    <script src="scripts/generator.js"></script>
+</body>
+</html>
